@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { TopStrip } from "./components/TopStrip";
 import { HeroSection } from "./components/HeroSection";
 import { AudienceCard } from "./components/AudienceCard";
@@ -28,8 +29,20 @@ export const LandingPage: React.FC = () => {
           {/* 2. Target Audience */}
           <AudienceCard audience={landingData.audience} />
 
-          {/* 3. Luxury Video Frame */}
-          <VideoPlayer />
+          {/* 3. Luxury Video Frame (Commented out for future use - currently showing photo) */}
+          {/* <VideoPlayer /> */}
+
+          {/* Hero Section Coach Intro Photo */}
+          <div className="relative w-full rounded-[16px] overflow-hidden shadow-[0_12px_30px_-8px_rgba(9,19,34,0.45),0_0_0_1px_rgba(9,19,34,0.1)] border border-[#091322]/10 bg-[#020710]">
+            <Image
+              src="/images/HeroSection-YashCoachIntro.jpeg"
+              alt="Coach Yash Intro"
+              width={1376}
+              height={768}
+              priority
+              className="w-full h-auto object-cover block rounded-[16px]"
+            />
+          </div>
 
           {/* 4. The Truth Callout */}
           <TruthCallout
